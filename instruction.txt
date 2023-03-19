@@ -1,0 +1,28 @@
++ changed the main in package json to server.js instead of main.js
+ajouter Dockerfile for both projects
+1) $ docker build .
+ $ docker build .
+2) $ docker run -p 3002:3000 sha256:a466e72d1eb20ce5726c5da951d5b41a7a1b399959390517bfd6f330d1827817
+$ docker run -it sha256:b20df1d6a80790873a9e410364c65aba77f593ffeeca85fc21d419a8d14513b0
+3)$ docker run -it  --name c1-python-image1 sha256:b20df1d6a80790873a9e410364c65aba77f593ffeeca85fc21d419a8d14513b0
+$ docker run -p 3003:3000 --name c1-node-image1 sha256:a466e72d1eb20ce5726c5da951d5b41a7a1b399959390517bfd6f330d1827817
+$ docker stop c1-node-image1
+$ docker start c1-node-image1
+$ docker start -a -i c1-python-image1
+4) $ docker stop c1-node-image1
+$ docker stop c1-python-image1
+$ docker stop epic-rosalind
+$ docker stop cool_bohr
+$ docker rm epic-rosalind
+$ docker rm cool_bohr
+$ docker rm c1-node-image1
+$ docker rm c1-python-image1
+$ docker rmi sha256:a466e72d1eb20ce5726c5da951d5b41a7a1b399959390517bfd6f330d1827817 -f
+$ docker rmi sha256:b20df1d6a80790873a9e410364c65aba77f593ffeeca85fc21d419a8d14513b0 -f
+5)
+$ docker build -t  node-image2:v1 .
+$ docker build -t  python-image2:v2 .
+6)
+$ docker run -p 3001:3000 --rm --name c1-node-image1 node-image2
+$ docker run -it --rm --name c1-python-image1 python-image2
+
